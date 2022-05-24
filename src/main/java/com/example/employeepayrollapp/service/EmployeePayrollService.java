@@ -1,12 +1,13 @@
 package com.example.employeepayrollapp.service;
 
 import com.example.employeepayrollapp.dto.EmployeePayrolDTO;
-import com.example.employeepayrollapp.entity.EmployeePayrollData;
+import com.example.employeepayrollapp.entity.EmployeePayrolData;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 @Service
+
 public class EmployeePayrollService implements IEmployeeService{
 
     private List<EmployeePayrolData> employeePayrolDataList=new ArrayList<>();
@@ -29,8 +30,8 @@ public class EmployeePayrollService implements IEmployeeService{
 
     public EmployeePayrolData updateEmployeePayrollData(int id, EmployeePayrolDTO employeePayrolDTO) {
         EmployeePayrolData employeePayrolData=this.getEmployeePayrollDataById(id);
-        employeePayrolData.setfName(employeePayrolDTO.getfName());
-        employeePayrolData.setlName(employeePayrolDTO.getlName());
+        employeePayrolData.setFName(employeePayrolDTO.getfName());
+        employeePayrolData.setLName(employeePayrolDTO.getlName());
         employeePayrolData.setCompany(employeePayrolDTO.getCompany());
         employeePayrolData.setRoll(employeePayrolDTO.getRoll());
         employeePayrolData.setSalary(employeePayrolDTO.getSalary());
@@ -41,10 +42,5 @@ public class EmployeePayrollService implements IEmployeeService{
     @Override
     public void deleteEmployeePayrollData(int id) {
         employeePayrolDataList.remove(id-1);
-    }
-
-    @Override
-    public void deleteEmployeePayrollData(int id) {
-        employeePayrollDataList.remove(id-1);
     }
 }
