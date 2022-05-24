@@ -2,13 +2,12 @@ package com.example.employeepayrollapp.service;
 
 import com.example.employeepayrollapp.dto.EmployeePayrolDTO;
 import com.example.employeepayrollapp.entity.EmployeePayrollData;
-import com.example.employeepayrollapp.entity.EmployeePayrollData;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 @Service
-public class EmployeePayrollService implements IEmployeeService{
+public class EmployeePayrollService extends IEmployeeService {
 
     private List<EmployeePayrollData> employeePayrollDataList=new ArrayList<>();
     @Override
