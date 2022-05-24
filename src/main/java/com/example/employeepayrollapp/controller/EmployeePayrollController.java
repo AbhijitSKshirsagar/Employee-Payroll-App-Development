@@ -1,12 +1,11 @@
 package com.example.employeepayrollapp.controller;
 
-import com.example.employeepayrollapp.entity.EmployeePayrolData;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class EmployeePayrollController {
+public class EmployeePayrollController<EmployeePayrolData> {
     @RequestMapping("/get")
     public ResponseEntity<String> getEmployeePayrollData(){
         return  new ResponseEntity<String>("Get call Success", HttpStatus.OK);
