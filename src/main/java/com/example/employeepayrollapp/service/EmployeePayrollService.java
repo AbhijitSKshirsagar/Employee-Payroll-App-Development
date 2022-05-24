@@ -7,35 +7,40 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 @Service
-public class EmployeePayrollService extends IEmployeeService {
+public class EmployeePayrollService implements IEmployeeService{
 
-    private List<EmployeePayrollData> employeePayrollDataList=new ArrayList<>();
+    private List<EmployeePayrolData> employeePayrolDataList=new ArrayList<>();
     @Override
-    public List<EmployeePayrollData> getEmployeePayrollData() {
-        return employeePayrollDataList;
+    public List<EmployeePayrolData> getEmployeePayrollData() {
+        return employeePayrolDataList;
     }
 
     @Override
-    public EmployeePayrollData getEmployeePayrollDataById(int id) {
-        return employeePayrollDataList.get(id-1);
+    public EmployeePayrolData getEmployeePayrollDataById(int id) {
+        return employeePayrolDataList.get(id-1);
     }
 
     @Override
-    public EmployeePayrollData createEmployeePayrollData(EmployeePayrolDTO employeePayrolDTO) {
-        EmployeePayrollData employeePayrolData=new EmployeePayrollData(employeePayrollDataList.size()+1,employeePayrolDTO);
-        employeePayrollDataList.add(employeePayrolData);
+    public EmployeePayrolData createEmployeePayrollData(EmployeePayrolDTO employeePayrolDTO) {
+        EmployeePayrolData employeePayrolData=new EmployeePayrolData(employeePayrolDataList.size()+1,employeePayrolDTO);
+        employeePayrolDataList.add(employeePayrolData);
         return employeePayrolData;
     }
 
-    public EmployeePayrollData updateEmployeePayrollData(int id, EmployeePayrolDTO employeePayrolDTO) {
-        EmployeePayrollData employeePayrolData=this.getEmployeePayrollDataById(id);
+    public EmployeePayrolData updateEmployeePayrollData(int id, EmployeePayrolDTO employeePayrolDTO) {
+        EmployeePayrolData employeePayrolData=this.getEmployeePayrollDataById(id);
         employeePayrolData.setfName(employeePayrolDTO.getfName());
         employeePayrolData.setlName(employeePayrolDTO.getlName());
         employeePayrolData.setCompany(employeePayrolDTO.getCompany());
         employeePayrolData.setRoll(employeePayrolDTO.getRoll());
         employeePayrolData.setSalary(employeePayrolDTO.getSalary());
-        employeePayrollDataList.set(id-1,employeePayrolData);
+        employeePayrolDataList.set(id-1,employeePayrolData);
         return employeePayrolData;
+    }
+
+    @Override
+    public void deleteEmployeePayrollData(int id) {
+        employeePayrolDataList.remove(id-1);
     }
 
     @Override
