@@ -22,8 +22,8 @@ public class EmployeePayrolData {
 
     public EmployeePayrolData(int id, EmployeePayrolDTO employeePayrolDTO) {
         this.id = id;
-        this.fName = employeePayrolDTO.getfName();
-        this.lName = employeePayrolDTO.getlName();
+        this.fName = employeePayrolDTO.getFName();
+        this.lName = employeePayrolDTO.getLName();
         this.company = employeePayrolDTO.getCompany();
         this.roll = employeePayrolDTO.getRoll();
         this.salary = employeePayrolDTO.getSalary();

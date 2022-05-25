@@ -18,3 +18,9 @@
 2022-05-24 23:08:14.500  WARN 3444 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2022-05-24 23:08:50.542  INFO 3444 --- [restartedMain] c.e.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 128.267 seconds (JVM running for 143.239)
 2022-05-24 23:08:50.740  INFO 3444 --- [restartedMain] c.e.e.EmployeePayrollAppApplication      : Employee Payroll App Started
+2022-05-25 10:53:38.470  INFO 8388 --- [restartedMain] c.e.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 1.8.0_20 on DESKTOP-696TCVJ with PID 8388 (C:\Users\AMOL\IdeaProjects\EmployeePayrollApp\target\classes started by root in C:\Users\AMOL\IdeaProjects\EmployeePayrollApp)
+2022-05-25 10:53:38.583 DEBUG 8388 --- [restartedMain] c.e.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.7.0, Spring v5.3.20
+2022-05-25 10:53:38.585  INFO 8388 --- [restartedMain] c.e.e.EmployeePayrollAppApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-05-25 10:55:11.093  WARN 8388 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-25 10:55:13.933  INFO 8388 --- [restartedMain] c.e.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 101.628 seconds (JVM running for 113.35)
+2022-05-25 10:55:13.987  INFO 8388 --- [restartedMain] c.e.e.EmployeePayrollAppApplication      : Employee Payroll App Started

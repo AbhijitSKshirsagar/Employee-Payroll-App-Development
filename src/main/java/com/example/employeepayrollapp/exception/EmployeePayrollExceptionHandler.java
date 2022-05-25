@@ -12,9 +12,16 @@ import java.util.stream.Collectors;
 
 public class EmployeePayrollExceptionHandler {
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<ResponseDTO> handleExceptions(MethodArgumentNotValidException methodArgumentNotValidException){
-        List<ObjectError> errorList=methodArgumentNotValidException.getBindingResult().getAllErrors();
-        List<String> errorMessage=errorList.stream().map(objectError -> objectError.getDefaultMessage()).collect(Collectors.toList());
-        ResponseDTO responseDTO=new ResponseDTO("Exception while processing REST Request",errorMessage);
+    public ResponseEntity<ResponseDTO> handleExceptions(MethodArgumentNotValidException methodArgumentNotValidException) {
+        List<ObjectError> errorList = methodArgumentNotValidException.getBindingResult().getAllErrors();
+        List<String> errorMessage = errorList.stream().map(objectError -> objectError.getDefaultMessage()).collect(Collectors.toList());
+        ResponseDTO responseDTO = new ResponseDTO("Exception while processing REST Request", errorMessage);
         return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(EmployeePayrollException.class)
+    public ResponseEntity<ResponseDTO> handleCustomException(EmployeePayrollException employeePayrollException) {
+        ResponseDTO responseDTO = new ResponseDTO("Exception while processing REST Request", employeePayrollException.getMessage());
+        return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.BAD_REQUEST);
+    }
 }
